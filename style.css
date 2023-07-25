@@ -250,14 +250,69 @@ section{
     justify-content: center;
 }
 
+.option-button{
+    visibility: hidden;
+}
+
+/* Your existing styles for the navbar here */
+
+/* Hide the regular menu items on mobile screens */
+@media screen and (max-width: 768px) {
+
+    .option-button{
+        visibility: visible;
+    }
+
+    .nav-menu ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+  
+    .nav-menu li {
+      padding: 10px;
+      text-align: center;
+    }
+  
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -250px; /* Initially hide the sidebar off the screen from the right side */
+      width: 250px; /* Set the width of the sidebar */
+      height: 100vh;
+      background-color: #333; /* Set the background color of the sidebar */
+      transition: right 0.3s ease; /* Add a smooth transition effect */
+    }
+  
+    /* Show the sidebar when the option button is clicked */
+    .nav-menu.show {
+      right: 0;
+    }
+  
+    /* Display the option button on mobile screens */
+    .option-button {
+      display: block;
+    }
+  }
+  
+
 @media (min-width:320px) {
     /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
 
-    .element-fade-in.show{
+    /* .element-fade-in.show{
         margin-top: 105px;
+    } */
+}
+@media (max-width:335px)  { /* smartphones, Android phones, landscape iPhone */ 
+    
+    .bg h1{
+        visibility: hidden;
+    }
+
+    .bg{
+        overflow: scroll;
     }
 }
-@media (min-width:480px)  { /* smartphones, Android phones, landscape iPhone */ }
 @media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
 @media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
 @media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
