@@ -38,7 +38,7 @@
     align-items: center;
     width: 100%;
     /* height: 15vh; */
-    /* background: (0, 0, 0, 0.2); /
+/* background: (0, 0, 0, 0.2); /
 } */
 .navbar {
     display: flex;
@@ -48,16 +48,18 @@
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    background-color: transparent; /* Set the initial background color as transparent */
-    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    background-color: transparent;
+    /* Set the initial background color as transparent */
+    transition: background-color 0.3s ease;
+    /* Add a smooth transition effect */
     /* Add other styling properties as needed */
     z-index: 9999;
     text-shadow: 1px 1px 5px white;
-  }
-  
-  .navbar.scrolled {
+}
+
+.navbar.scrolled {
     backdrop-filter: blur(10px);
-  }
+}
 
 .nav-menu {
     list-style: none;
@@ -101,7 +103,7 @@ html {
     justify-items: center;
 }
 
-section{
+section {
     /* place-items: center; */
     height: 90.5vh;
     padding: 10px;
@@ -109,7 +111,7 @@ section{
     padding-top: 8vh;
 }
 
-.bg h1{
+.bg h1 {
     text-align: center;
     color: #FFFFFF;
 }
@@ -133,8 +135,6 @@ section{
     filter: blur(5px);
     transform: translateX(-100%);
     transition: all 1.8s;
-    overflow: scroll;
-
 }
 
 /* Visible state for Element 1 (left) */
@@ -142,7 +142,6 @@ section{
     opacity: 1;
     filter: blur(0);
     transform: translateX(0);
-    overflow: scroll;
 }
 
 /* Hidden state for Element 2 (right) */
@@ -207,13 +206,13 @@ section{
     background-size: cover;
 }
 
-.footer-flex-1 img{
+.footer-flex-1 img {
     width: 20px;
     padding: 10px;
     margin: 10px;
 }
 
-.footer-flex-1{
+.footer-flex-1 {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -222,26 +221,27 @@ section{
     align-items: center;
 
 }
-.footer-flex-1 div{
+
+.footer-flex-1 div {
     margin: 10px;
     padding: 10px;
 }
 
-.left-section img{
+.left-section img {
     width: 200px;
     height: 200px;
     padding: 10px;
     margin: 10px;
 }
 
-.right-section{
+.right-section {
     color: #FFFFFF;
     text-align: justify;
     max-width: 900px;
     padding: 10px;
 }
 
-.about-section{
+.about-section {
     display: flex;
     /* place-items: center; */
     flex-wrap: wrap;
@@ -251,97 +251,147 @@ section{
     justify-content: center;
 }
 
-.option-button{
-    visibility: hidden;
+.option-button {
+    display: none;
 }
 
-.Pictures{
+.Pictures,
+.videos {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
     align-items: center;
-    overflow: scroll;
 }
-.Pictures img{
-    width: 175px;
+
+.videos a {
+    padding: 5px;
 }
-.threebyfour{
+
+.videos img {
+    width: 375px;
+}
+
+.Pictures img {
+    width: 255px;
+}
+
+.threebyfour {
     margin: 5px;
     margin-top: 0px;
 }
+
+/* .element-from-left.hidden {
+    overflow: scroll;
+}
+
+.element-from-left.show {
+    overflow: scroll;
+} */
+
+/* Hide the scrollbar */
+.element-from-left.show,
+.element-from-left.hidden {
+    overflow: auto;
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* Internet Explorer and Edge */
+}
+
+/* Hide the scrollbar for WebKit-based browsers (e.g., Chrome, Safari) */
+.element-from-left.hidden::-webkit-scrollbar,
+.element-from-left.show::-webkit-scrollbar {
+    display: none;
+}
+
 
 /* Your existing styles for the navbar here */
 
 /* Hide the regular menu items on mobile screens */
 @media screen and (max-width: 768px) {
 
-    .option-button{
-        visibility: visible;
+    .videos img {
+        width: 280px;
     }
 
     .nav-menu ul {
-      list-style-type: none;
-      padding: 0;
-      margin: 0;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
     }
-  
+
     .nav-menu li {
-      padding: 10px;
-      text-align: center;
+        padding: 10px;
+        text-align: center;
     }
-  
+
     .nav-menu {
-      position: fixed;
-      top: 0;
-      right: -250px; /* Initially hide the sidebar off the screen from the right side */
-      width: 250px; /* Set the width of the sidebar */
-      height: 100vh;
-      background-color: #333; /* Set the background color of the sidebar */
-      transition: right 0.3s ease; /* Add a smooth transition effect */
+        position: fixed;
+        top: 0;
+        right: -250px;
+        /* Initially hide the sidebar off the screen from the right side */
+        width: 250px;
+        /* Set the width of the sidebar */
+        height: 100vh;
+        background-color: #333;
+        /* Set the background color of the sidebar */
+        transition: right 0.3s ease;
+        /* Add a smooth transition effect */
     }
-  
+
     /* Show the sidebar when the option button is clicked */
     .nav-menu.show {
-      right: 0;
+        right: 0;
     }
-  
+
     /* Display the option button on mobile screens */
     .option-button {
-      display: block;
+        display: block;
     }
-    
-  }
-
-  
-@media (max-width:280px) {
-    
 }
 
+
+@media (max-width:280px) {}
+
 @media (max-width:375px) {
-    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */ 
+    /* smartphones, portrait iPhone, portrait 480x320 phones (Android) */
 
     /* .element-fade-in.show{
         margin-top: 105px;
     } */
-    .element-fade-in.show h1{
+    .element-fade-in.show h1 {
         visibility: hidden;
     }
 }
+
 @media (max-height:653px) {
-    .element-fade-in.show{
+    .element-fade-in.show {
         margin-top: 225px;
     }
 }
 
-@media (max-width:480px)  { /* smartphones, Android phones, landscape iPhone */ 
+@media (max-width:480px) {
+    /* smartphones, Android phones, landscape iPhone */
 
-    .bg{
+    .bg {
         overflow: scroll;
     }
 }
-@media (min-width:600px)  { /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */ }
-@media (min-width:801px)  { /* tablet, landscape iPad, lo-res laptops ands desktops */ }
-@media (min-width:1025px) { /* big landscape tablets, laptops, and desktops */ }
-@media (min-width:1281px) { /* hi-res laptops and desktops */ }
+
+@media (min-width:600px) {
+    /* portrait tablets, portrait iPad, e-readers (Nook/Kindle), landscape 800x480 phones (Android) */
+}
+
+@media (min-width:801px) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+}
+
+@media (min-width:1025px) {
+    /* big landscape tablets, laptops, and desktops */
+}
+
+@media (min-width:1281px) {
+    /* hi-res laptops and desktops */
+}
