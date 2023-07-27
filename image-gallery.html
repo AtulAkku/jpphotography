@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="styleimage.css">
+    <link rel="stylesheet" href="header-footer-css.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar" style="position: static;">
+        <h1>JP Photography</h1>
+        <div class="nav-menu">
+            <li>Home</li>
+            <li>
+                <div class="dropdown">
+                    Work
+                    <div class="dropdown-content">
+                        <a href="#">Shoots</a>
+                        <a href="https://www.instagram.com/jyotiipokhariya/">Instagram</a>
+                        <a href="https://www.youtube.com/@jpphotography">YouTube</a>
+                    </div>
+                </div>
+            </li>
+            <li>Contact</li>
+            <li>About</li>
+        </div>
+        <div class="option-button" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+    
+    <h2 style="text-align: center;">Modal</h2>
+
+    <div class="image-gallery">
+        <img src="images/IMG-20230725-WA0065.jpg" alt="Image 1" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0104.jpg" alt="Image 2" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0091.jpg" alt="Image 3" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0103.jpg" alt="Image 4" onclick="showImage(this)">
+        <!-- Add more images as needed -->
+    </div>
+
+    <h2 style="text-align: center;">Bridal</h2>
+    <div class="image-gallery">
+        <img src="images/IMG-20230725-WA0103.jpg" alt="Image 4" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0065.jpg" alt="Image 1" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0104.jpg" alt="Image 2" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0091.jpg" alt="Image 3" onclick="showImage(this)">
+        <!-- Add more images as needed -->
+    </div>
+
+    <h2 style="text-align: center;">Birthday</h2>
+    <div class="image-gallery">
+        <img src="images/IMG-20230725-WA0065.jpg" alt="Image 1" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0104.jpg" alt="Image 2" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0091.jpg" alt="Image 3" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0103.jpg" alt="Image 4" onclick="showImage(this)">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <h2 style="text-align: center;">Cuple</h2>
+    <div class="image-gallery">
+        <img src="images/IMG-20230725-WA0065.jpg" alt="Image 1" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0104.jpg" alt="Image 2" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0091.jpg" alt="Image 3" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0103.jpg" alt="Image 4" onclick="showImage(this)">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <h2 style="text-align: center;">Ceremonys</h2>
+    <div class="image-gallery">
+        <img src="images/IMG-20230725-WA0065.jpg" alt="Image 1" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0104.jpg" alt="Image 2" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0091.jpg" alt="Image 3" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0103.jpg" alt="Image 4" onclick="showImage(this)">
+        <!-- Add more images as needed -->
+    </div>
+    
+    <h2 style="text-align: center;">Batchelor Party</h2>
+    <div class="image-gallery">
+        <img src="images/IMG-20230725-WA0065.jpg" alt="Image 1" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0104.jpg" alt="Image 2" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0091.jpg" alt="Image 3" onclick="showImage(this)">
+        <img src="images/IMG-20230725-WA0103.jpg" alt="Image 4" onclick="showImage(this)">
+        <!-- Add more images as needed -->
+    </div>
+
+    <div id="image-modal">
+        <span class="close" onclick="closeImage()">&times;</span>
+        <img id="modal-image" src="" alt="Full-Screen Image">
+        <span class="prev" onclick="changeImage(-1)">&#10094;</span>
+        <span class="next" onclick="changeImage(1)">&#10095;</span>
+    </div>
+    <footer>
+        <div class="footer-flex-1">
+            <div>
+                @2023 JP Photography
+            </div>
+            <div>
+                <a href="https://www.facebook.com/">
+                    <img src="icons/facebook.svg" alt="facebook icon">
+                </a>
+                <a href="https://www.instagram.com/jyotiipokhariya/">
+                    <img src="icons/instagram.svg" alt="instagram icon">
+                </a>
+                <a href="https://www.youtube.com/@jpphotography">
+                    <img src="icons/youtube.svg" alt="youtube icon">
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="imagejs.js"></script>
+</body>
+</html>
