@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    /* Set the initial background color as transparent */
+    transition: background-color 0.3s ease;
+    /* Add a smooth transition effect */
+    /* Add other styling properties as needed */
+    z-index: 9999;
+}
+.navbar h1{
+    font-size: 42px;
+    font-weight: 900;
+    background-image: url("../A\ meaningful\ brand\ strategy\ for\ Dulux\ 2\ -638820876.jpg");
+    background-size: cover;
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;   
+    margin: 0;
+    text-align: center;
+}
+
+.navbar.scrolled {
+    backdrop-filter: blur(10px);
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu li {
+    margin: 10px;
+    padding: 10px;
+}
+
+.dropdown {
+    display: inline-block;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* width: 100%; */
+    /* overflow: auto; */
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
+    background-color: #00ffee;
+    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    color: #000000;
+    padding: 5px;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: #FFFFFF;
+    background-color: #00A4BD;
+}
+
+.option-button {
+    display: none;
+    padding: 2px;
+}
+
+.footer-flex-1 img {
+    width: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.footer-flex-1 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+.footer-flex-1 div {
+    margin: 10px;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 768px) {
+    .nav-menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .nav-menu li {
+        padding: 10px;
+        text-align: center;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        /* Initially hide the sidebar off the screen from the right side */
+        width: 250px;
+        /* Set the width of the sidebar */
+        height: 100vh;
+        background-color: #333;
+        /* Set the background color of the sidebar */
+        transition: right 0.3s ease;
+        /* Add a smooth transition effect */
+    }
+
+    /* Show the sidebar when the option button is clicked */
+    .nav-menu.show {
+        right: 0;
+        z-index: 11;
+    }
+
+    /* Display the option button on mobile screens */
+    .option-button {
+        display: block;
+    }
+}
