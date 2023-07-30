@@ -24,7 +24,7 @@ html {
     z-index: 9999;
 }
 .navbar h1{
-    font-size: 42px;
+    font-size: 60px;
     font-weight: 900;
     background-image: url("../A\ meaningful\ brand\ strategy\ for\ Dulux\ 2\ -638820876.jpg");
     background-size: cover;
@@ -114,6 +114,9 @@ html {
 
 
 @media screen and (max-width: 768px) {
+    .navbar h1{
+        font-size: 42px;
+    }
     .nav-menu ul {
         list-style-type: none;
         padding: 0;

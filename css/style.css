@@ -10,7 +10,7 @@ html {
 
 .bg {
     /* The image used */
-    background-image: url("1.jpg");
+    background-image: url("/1.jpg");
 
     /* Full height */
     height: 100vh;
@@ -106,7 +106,7 @@ section {
 
 .bg-2 {
     /* The image used */
-    background-image: url("2.jpeg");
+    /* background-image: url("/2.jpeg"); */
 
     /* Full height */
     height: 100vh;
@@ -119,7 +119,7 @@ section {
 
 .bg-3 {
     /* The image used */
-    background-image: url("3.jpg");
+    /* background-image: url("/3.jpeg"); */
 
     /* Full height */
     height: 100vh;
