@@ -129,6 +129,7 @@ html {
     }
 
     .nav-menu {
+        display: none;
         position: fixed;
         top: 0;
         right: -250px;

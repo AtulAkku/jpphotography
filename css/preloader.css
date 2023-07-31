@@ -1,0 +1,8 @@
+#preloader{
+    background: #6ad47f url("../Loading\ camera.gif") no-repeat center center;
+    background-size: 300px;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: 99999999;
+}

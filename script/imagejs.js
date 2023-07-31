@@ -7,7 +7,7 @@ function showImage(imgElement) {
 
     currentImageIndex = Array.from(images).indexOf(imgElement);
 
-    modal.style.display = 'grid';
+    modal.style.display = 'flex';
     modalImage.src = imgElement.src;
 }
 

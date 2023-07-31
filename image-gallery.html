@@ -2,10 +2,14 @@
 <html>
 <head>
     <title>Image Gallery</title>
-    <link rel="stylesheet" href="css/styleimage.css">
     <link rel="stylesheet" href="css/header-footer-css.css">
+    <link rel="stylesheet" href="css/styleimage.css">
+    <link rel="stylesheet" href="css/preloader.css">
 </head>
 <body>
+
+    <div id="preloader"></div>
+
     <nav class="navbar" id="navbar">
         <h1>JP Photography</h1>
         <div class="nav-menu">
@@ -27,7 +31,6 @@
     </nav>
     
     <h2 style="text-align: center;">Model</h2>
-
     <div class="image-gallery">
         <img src="shoot/Model/IMG-20230326-WA0038.jpg" alt="Image 1" onclick="showImage(this)">
         <img src="shoot/Model/IMG-20230326-WA0039.jpg" alt="Image 2" onclick="showImage(this)">
@@ -160,6 +163,7 @@
         <span class="prev" onclick="changeImage(-1)">&#10094;</span>
         <span class="next" onclick="changeImage(1)">&#10095;</span>
     </div>
+
     <footer>
         <div class="footer-flex-1">
             <div>
@@ -181,5 +185,7 @@
     </footer>
     <script src="script/app.js"></script>
     <script src="script/imagejs.js"></script>
+    <script src="script/preloader.js"></script>
+
 </body>
 </html>

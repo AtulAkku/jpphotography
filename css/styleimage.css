@@ -30,7 +30,7 @@ body {
     display: none;
     position: fixed;
     z-index: 9999;
-    padding-top: 60px;
+    /* padding-top: 60px; */
     left: 0;
     top: 0;
     width: 100%;
