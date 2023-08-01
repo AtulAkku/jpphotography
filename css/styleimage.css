@@ -76,6 +76,48 @@ body {
     right: 15px;
 }
 
+
+
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.filter-button {
+    margin: 5px;
+    padding: 8px 16px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.filter-button.active {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.div-container {
+    display: flex;
+    justify-content: center;
+}
+
+.item {
+    display: none;
+    /* border: 1px solid #ccc; */
+}
+
+.item.active {
+    display: block;
+}
+
+
+
+
+
 @media screen and (max-width: 768px) {
     .image-gallery img {
         width: 125px;
