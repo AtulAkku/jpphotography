@@ -75,3 +75,10 @@ body {
 .next {
     right: 15px;
 }
+
+@media screen and (max-width: 768px) {
+    .image-gallery img {
+        width: 125px;
+        height: 167px;
+    }
+}
