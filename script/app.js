@@ -32,16 +32,21 @@ hiddenElements.forEach((el) => observer.observe(el));
 // window.addEventListener('scroll', changeNavbarColorOnScroll);
 
 
-const navbar = document.getElementById('navbar');
 
-// Define the scroll event handler
-function changeNavbarColorOnScroll() {
-  if (window.scrollY > 0) {
-    navbar.classList.add('scrolled'); // Add the 'scrolled' class when scrolled
-  } else {
-    navbar.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
-  }
-}
+// for scroll    was suppose to blur the nav while move
+// const navbar = document.getElementById('navbar');
+
+// // Define the scroll event handler
+// function changeNavbarColorOnScroll() {
+//   if (window.scrollY > 0) {
+//     navbar.classList.add('scrolled'); // Add the 'scrolled' class when scrolled
+//   } else {
+//     navbar.classList.remove('scrolled'); // Remove the 'scrolled' class when at the top
+//   }
+// }
+
+
+
 
 // Attach the event listener to the 'scroll' event
 window.addEventListener('scroll', changeNavbarColorOnScroll);

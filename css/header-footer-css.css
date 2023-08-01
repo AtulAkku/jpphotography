@@ -48,6 +48,11 @@ html {
     justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
+    color: black;
+}
+
+.nav-menu a{
+    color: black;
 }
 
 .nav-menu li {
@@ -129,7 +134,6 @@ html {
     }
 
     .nav-menu {
-        display: none;
         position: fixed;
         top: 0;
         right: -250px;
@@ -153,4 +157,11 @@ html {
     .option-button {
         display: block;
     }
+    .nav-menu {
+        color: white;
+    }
+    .nav-menu a{
+        color: white;
+    }
+
 }
