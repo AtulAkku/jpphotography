@@ -1,173 +1,292 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test</title>
+    <link rel="icon" href="JP Photography.ico" type="image/x-icon">
+    <title>JP Photography - Home</title>
     <style>
-        
-@import url('https://fonts.googleapis.com/css2?family=Amaranth&display=swap');
-/* styles.css */
+        /* Additional CSS styles can be added here */
+        body {
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+            /* Smooth scrolling for the entire page */
+        }
 
-@font-face {
-  font-family: 'PuppyLoveBrush';
-  src: url("puppy-love-brush/PUPPY\ LOVE\ BRUSH.ttf") format('truetype');
-  /* Add other font formats if available */
-}
+        .slider-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
 
-.navbar h1 {
-  font-family: 'Amaranth', sans-serif;
-}
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
 
+        .slide {
+            flex: 0 0 100%;
+            min-width: 100%;
+            max-height: 100vh;
+            width: auto;
+            object-fit: contain;
+        }
 
-/* Add other CSS styles for your HTML page */
+        /* Full-screen image viewer styles */
+        .full-screen-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            /* Black background with transparency */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* z-index: 9; */
+        }
 
-body,
-html {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    font-family: 'PUPPY LOVE BRUSH', serif;
-}
+        .full-screen-image {
+            max-width: 90%;
+            max-height: 90%;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+            /* White border around the image */
+        }
 
+        .full-screen-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-.navbar {
-    display: flex;
-    position: fixed;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    background-color: transparent;
-    /* Set the initial background color as transparent */
-    transition: background-color 0.3s ease;
-    /* Add a smooth transition effect */
-    /* Add other styling properties as needed */
-    z-index: 9999;
-}
+        /* Navigation arrows styles (optional) */
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
 
-.navbar.scrolled {
-    backdrop-filter: blur(10px);
-}
+        .arrow-left {
+            left: 20px;
+        }
 
-.nav-menu {
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.nav-menu li {
-    margin: 10px;
-    padding: 10px;
-}
-
-.dropdown {
-    display: inline-block;
-    position: relative;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    /* width: 100%; */
-    /* overflow: auto; */
-    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.4);
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-.dropdown-content a {
-    display: block;
-    color: #000000;
-    padding: 5px;
-    text-decoration: none;
-}
-
-.dropdown-content a:hover {
-    color: #FFFFFF;
-    background-color: #00A4BD;
-}
-
-.option-button {
-    display: none;
-}
-
-.navbar h1{
-    font-size: 90px;
-    margin: 0;
-    font-weight: 900;
-    background-image: url("best-camera-2-medium.jpg");
-    background-size: cover;
-    background-position: center;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-}
-@media screen and (max-width: 768px) {
-    .nav-menu ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    .nav-menu li {
-        padding: 10px;
-        text-align: center;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -250px;
-        /* Initially hide the sidebar off the screen from the right side */
-        width: 250px;
-        /* Set the width of the sidebar */
-        height: 100vh;
-        background-color: #333;
-        /* Set the background color of the sidebar */
-        transition: right 0.3s ease;
-        /* Add a smooth transition effect */
-    }
-
-    /* Show the sidebar when the option button is clicked */
-    .nav-menu.show {
-        right: 0;
-    }
-
-    /* Display the option button on mobile screens */
-    .option-button {
-        display: block;
-    }
-}
+        .arrow-right {
+            right: 20px;
+        }
     </style>
+    <link rel="stylesheet" href="css/header-footer-css.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/preloader.css">
 </head>
+
 <body>
+
+    <div id="preloader"></div>
+
     <nav class="navbar" id="navbar">
         <h1>JP Photography</h1>
         <div class="nav-menu">
-            <li>Home</li>
+            <li><a href="index.html" style="text-decoration: none;">Home</a></li>
             <li>
                 <div class="dropdown">
                     Work
                     <div class="dropdown-content">
-                        <a href="#">Shoots</a>
+                        <a href="image-gallery.html">Shoots</a>
                         <a href="https://www.instagram.com/jyotiipokhariya/">Instagram</a>
                         <a href="https://www.youtube.com/@jpphotography">YouTube</a>
                     </div>
                 </div>
             </li>
-            <li>Contact</li>
-            <li>About</li>
+            <li><a href="mailto: jyotipokhariya2001@gmail.com" style="text-decoration: none;">Contact</a></li>
+            <li><a href="#bg" style="text-decoration: none;">About</a></li>
         </div>
         <div class="option-button" onclick="toggleMenu()">&#9776;</div>
     </nav>
-    <script src="app.js"></script>
+
+    <div class="slider-container">
+        <div class="slider">
+            <img class="slide" src="shoot/Birthday/IMG-20230725-WA0043.jpg" alt="Image 1">
+            <img class="slide" src="shoot/couple/IMG-20230725-WA0100.jpg" alt="Image 2">
+            <img class="slide" src="shoot/Batchlor party/IMG-20230725-WA0049.jpg" alt="Image 3">
+            <img class="slide" src="shoot/Birthday/IMG-20230725-WA0093.jpg" alt="Image 4">
+            <img class="slide" src="shoot/Birthday/WhatsApp Image 2023-08-01 at 6.59.49 PM.jpeg" alt="Image 5">
+            <img class="slide" src="shoot/Ceremonies/IMG-20230725-WA0040.jpg" alt="Image 6">
+            <!-- Add more images as needed -->
+        </div>
+    </div>
+
+    <div class="bg-2">
+        <section class="element-from-left hidden">
+            <h1 style="text-align: center;">Photos</h1>
+            <div class="Pictures">
+                <div class="threebyfour"><img src="shoot/Bridal/IMG-20230725-WA0010.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Model/IMG-20230725-WA0034.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Model/IMG-20230725-WA0019.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Birthday/IMG-20230725-WA0074.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Batchlor party/IMG-20230725-WA0045.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Bridal/IMG-20230329-WA0009.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Bridal/IMG-20230725-WA0065.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/couple/IMG-20230725-WA0097.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Maternity shoot/IMG-20230726-WA0007.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Maternity shoot/IMG-20230726-WA0010.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Model/IMG-20230725-WA0020.jpg" alt=""></div>
+                <div class="threebyfour"><img src="shoot/Model/IMG-20230725-WA0007.jpg" alt=""></div>
+            </div>
+            <div style="text-align: center;"><a href="image-gallery.html"
+                    style="text-align: center; text-decoration: none;">See More...</a></div>
+        </section>
+    </div>
+
+    <div class="bg-3">
+        <section class="element-from-left hidden">
+            <h1 style="text-align: center;">YouTube</h1>
+            <div class="videos">
+                <a href="https://www.youtube.com/watch?v=ksioMN358G0&t=123s" class="sixteenrationine"><img
+                        src="vid-thumbnail/first vlog.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=INd4wYI0Tmg&t=23s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Nainital vlog.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=JO1Jq99xLo4&t=8s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Meternity shoot.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=NoiFTc1hJSc&t=275s" class="sixteenrationine"><img
+                        src="vid-thumbnail/outdoor photoshoot.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=lHEvFUWdxvs&t=59s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Birthdayshoot9.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=47C8hqTMPZg&t=1s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Batchelor party.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=iMOM4GiMwe4" class="sixteenrationine"><img
+                        src="vid-thumbnail/lotus temple.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=4SGcSU86B9Q&t=111s" class="sixteenrationine"><img
+                        src="vid-thumbnail/PreBirthdayshoot.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=gJy2ZMrmbf4&t=152s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Thread ceremony.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=m8MQDBafLoQ&t=297s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Narayan Aashram.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=9I0sd5QfAEA&t=24s" class="sixteenrationine"><img
+                        src="vid-thumbnail/Rudranath Vlog.jpg" alt="thumbnail"></a>
+                <a href="https://www.youtube.com/watch?v=CXOoqKZyJ-g" class="sixteenrationine"><img
+                        src="vid-thumbnail/naming ceremony.jpg" alt="thumbnail"></a>
+            </div>
+            <div style="text-align: center;"><a href="https://www.youtube.com/@jpphotography"
+                    style="text-align: center; text-decoration: none;">See More...</a></div>
+        </section>
+    </div>
+
+    <div id="bg" class="bg">
+
+        <div class="element-fade-in hidden">
+            <!--  style="height: 81vh; -->
+            <h1>About</h1>
+            <div class="about-section">
+                <div class="left-section">
+                    <img src="squre new.jpeg" alt="My Pic">
+                </div>
+                <div class="right-section">
+                    Hello everyone my name is Jyoti, and photography is my passion.
+                    .<br>
+                    Photography to me is "Catching a moment which is passing, and which is true”... 📷
+                    <br>
+                    I am a visionary photographer with an undeniable passion for storytelling through the lens. With
+                    an artistic eye and technical finesse, I try to craft captivating images that breathe life into
+                    moments, emotions, and landscapes.I am a constant learner, try to embrace new challenges,
+                    pushing the boundaries of my craft. I try encapsulates the magic of life, leaving an indelible
+                    mark on all who behold their artistry. Prepare to be mesmerized by the world through my
+                    captivating perspective.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-flex-1">
+            <div>
+                @2023 JP Photography
+            </div>
+            <div>
+                <a href="https://www.facebook.com/jyotipokhariya.jasmine">
+                    <img src="icons/facebook.svg" alt="facebook icon">
+                </a>
+                <a href="https://www.instagram.com/jyotiipokhariya/">
+                    <img src="icons/instagram.svg" alt="instagram icon">
+                </a>
+                <a href="https://www.youtube.com/@jpphotography">
+                    <img src="icons/youtube.svg" alt="youtube icon">
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script>
+        const slider = document.querySelector(".slider");
+        let slideIndex = 0;
+        const slides = document.querySelectorAll(".slide");
+
+        function showSlide(index) {
+            if (index < 0) {
+                index = slides.length - 1;
+            } else if (index >= slides.length) {
+                index = 0;
+            }
+
+            slider.style.transform = `translateX(-${index * 100}%)`;
+            slideIndex = index;
+        }
+
+        function nextSlide() {
+            showSlide(slideIndex + 1);
+        }
+
+        function prevSlide() {
+            showSlide(slideIndex - 1);
+        }
+
+        // Function to open the image in full-screen when clicked
+        function openFullScreenImage(index) {
+            const fullScreenContainer = document.createElement("div");
+            fullScreenContainer.classList.add("full-screen-container");
+
+            const image = document.createElement("img");
+            image.classList.add("full-screen-image");
+            image.src = slides[index].querySelector("img").src;
+            image.alt = slides[index].querySelector("img").alt;
+            fullScreenContainer.appendChild(image);
+
+            const closeBtn = document.createElement("span");
+            closeBtn.classList.add("full-screen-close");
+            closeBtn.innerHTML = "&times;";
+            fullScreenContainer.appendChild(closeBtn);
+
+            // Function to close the full-screen image
+            closeBtn.addEventListener("click", () => {
+                fullScreenContainer.remove();
+            });
+
+            document.body.appendChild(fullScreenContainer);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            showSlide(slideIndex);
+
+            setInterval(nextSlide, 3000); // Change slide every 3 seconds (adjust as needed)
+
+            slides.forEach((slide, index) => {
+                slide.addEventListener("click", () => openFullScreenImage(index));
+            });
+        });
+
+    </script>
+
+    <script src="script/app.js"></script>
+    <script src="script/preloader.js"></script>
 </body>
+
 </html>
